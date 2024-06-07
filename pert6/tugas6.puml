@@ -1,0 +1,36 @@
+@startuml
+
+enum Kategori {
+    KOPI = 1,
+    TEH = 2,
+    DESERT = 3,
+    SNACK = 4,
+    MAKANAN = 5,
+    LAINNYA = 6
+}
+
+class MenuOrder {
+    - pilih[100] : int
+    - jumlah[100] : int
+    - sub_total[100] : int
+    - harga[100] : int
+    - menu[100] : string
+    - total_bayar : int
+    - i : int
+    - selesai : bool
+
+    + main() : int
+}
+
+MenuOrder --> Kategori : memilih Kategori
+Kategori --> "1. KOPI"
+Kategori --> "2. TEH"
+Kategori --> "3. DESERT"
+Kategori --> "4. SNACK"
+Kategori --> "5. MAKANAN"
+Kategori --> "6. LAINNYA"
+
+MenuOrder --> "Tekan 0 jika selesai melakukan pemesanan"
+
+
+@enduml
